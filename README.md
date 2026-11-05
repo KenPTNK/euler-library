@@ -3,7 +3,7 @@
 A Vietnamese book-rental website built with plain HTML, CSS and JavaScript on Firebase.
 Made in the MindX Web Development course (2025).
 
-**Live:** https://kenptnk.github.io/euler-library/
+**Live:** https://kenptnk.github.io/MyLibrary/
 
 ## Features
 
