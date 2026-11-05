@@ -16,7 +16,7 @@ function featuredCard(book) {
     card.className = 'book-card';
 
     const img = document.createElement('img');
-    img.src = info.imageLinks.thumbnail.replace(/^http:\/\//, 'https://');
+    img.src = (info.imageLinks.thumbnail || info.imageLinks.smallThumbnail).replace(/^http:\/\//, 'https://');
     img.alt = `Bìa sách ${info.title}`;
     img.loading = 'lazy';
 
@@ -30,7 +30,7 @@ function featuredCard(book) {
     footer.className = 'footerBooks';
     const price = document.createElement('p');
     price.className = 'price';
-    price.textContent = formatPrice(book.saleInfo);
+    price.textContent = formatPrice(book.saleInfo || {});
     const read = document.createElement('button');
     read.className = 'buy-btn';
     read.textContent = 'Đọc Ngay';
@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const snapshot = await db.collection('books').limit(FEATURED_COUNT * 2).get();
         const books = snapshot.docs
             .map(doc => doc.data().data)
-            .filter(book => book && book.volumeInfo && book.volumeInfo.imageLinks)
+            .filter(book => book && book.volumeInfo && book.volumeInfo.imageLinks
+                && (book.volumeInfo.imageLinks.thumbnail || book.volumeInfo.imageLinks.smallThumbnail))
             .slice(0, FEATURED_COUNT);
         books.forEach(book => grid.appendChild(featuredCard(book)));
         section.hidden = books.length === 0;
