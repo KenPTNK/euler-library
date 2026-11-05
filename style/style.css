@@ -444,3 +444,26 @@ body {
   height: auto;
   object-fit: contain;
 }
+/* Featured books on the home page */
+.featured-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: 8px 0 16px;
+}
+
+.featured-head h2 {
+  font-size: 24px;
+  color: var(--primary-dark);
+}
+
+.featured-head a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* five featured books fill the row instead of leaving an empty slot */
+.featured .book-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}

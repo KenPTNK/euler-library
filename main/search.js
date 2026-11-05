@@ -5,7 +5,7 @@ function createBookDiv(title, author, price, imgSrc, index) {
 
     // Create and append the book image
     const img = document.createElement('img');
-    img.src = imgSrc;
+    img.src = imgSrc.replace(/^http:\/\//, 'https://');
     img.alt = "Bìa sách";
     bookCard.appendChild(img);
 
@@ -51,6 +51,9 @@ function formatNumberWithDots(number) {
 
 // const bookArray = [];
 const find = document.getElementById('search-btn');
+['search-title', 'search-author'].forEach(id => {
+    document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') find.click(); });
+});
 find.addEventListener('click', async function () {
     const bookgrid = document.querySelector('.book-grid');
     // Clear all existing book cards

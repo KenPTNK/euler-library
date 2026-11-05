@@ -16,7 +16,7 @@
             <nav class="nav">
                 <h1 class="logo">📚 Euler Library</h1>
                 <a href="./index.html">Trang chủ</a>
-                <a href="./search.html" onclick="saveBooks()" class="findBooks">Thư Viện</a>
+                <a href="./search.html" class="findBooks">Thư Viện</a>
             </nav>
             <div class="in-and-out">
                 <a href="./login.html" class="login-btn">Đăng nhập</a>
@@ -52,18 +52,13 @@
     </section>
 
 
-    <!-- Book Grid -->
-    <section class="container book-grid">
-        <!-- <div class="book-card">
-            <img src="https://covers.openlibrary.org/b/id/240727-S.jpg" alt="Bìa sách" />
-            <h3>Tư Duy Nhanh Và Chậm</h3>
-            <p class="author">Daniel Kahneman</p>
-            <div class="footer">
-                <p class="price">199.000đ</p>
-                <button class="buy-btn">Đọc Ngay</button>
-            /div>
-        </div> -->
-        <!-- Copy thêm card tại đây nếu cần -->
+    <!-- Featured books (filled by main/home.js) -->
+    <section id="featured" class="container featured" hidden>
+        <div class="featured-head">
+            <h2>Sách trong thư viện</h2>
+            <a href="./search.html">Xem tất cả &rarr;</a>
+        </div>
+        <div class="book-grid"></div>
     </section>
 
     <!-- Footer -->
@@ -74,6 +69,7 @@
     <script src="https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.7.1/firebase-auth-compat.js"></script>
     <script src="./main/main.js"></script>
+    <script src="./main/home.js"></script>
 </body>
 
 </html>

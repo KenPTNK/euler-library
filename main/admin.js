@@ -5,7 +5,7 @@ function createBookDiv(title, author, price, imgSrc, index) {
 
     // Create and append the book image
     const img = document.createElement('img');
-    img.src = imgSrc;
+    img.src = imgSrc.replace(/^http:\/\//, 'https://');
     img.alt = "Bìa sách";
     bookCard.appendChild(img);
 

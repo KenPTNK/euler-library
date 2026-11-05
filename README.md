@@ -7,6 +7,7 @@ Made in the MindX Web Development course (2025).
 
 ## Features
 
+- **Home page** shows a few books from the library, each opening its detail page.
 - **Search** books through the Google Books API (`googleapis.com/books/v1/volumes`).
 - **Accounts** with Firebase Authentication (email and password).
 - **Rent books** with an in-site account balance; rented books appear on the account page.

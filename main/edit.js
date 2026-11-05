@@ -79,7 +79,7 @@ db.collection("books").doc(docId).get().then((doc) => {
         createProductPage({
             title,
             author,
-            imageURL: data.volumeInfo.imageLinks.thumbnail,
+            imageURL: data.volumeInfo.imageLinks.thumbnail.replace(/^http:\/\//, 'https://'),
             description: data.volumeInfo.description,
             price,
             link: data.volumeInfo.previewLink

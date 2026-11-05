@@ -82,7 +82,7 @@ if (data.volumeInfo.authors != null) {
 createProductPage({
   title: title,
   author: author,
-  imageURL: data.volumeInfo.imageLinks.thumbnail,
+  imageURL: data.volumeInfo.imageLinks.thumbnail.replace(/^http:\/\//, 'https://'),
   description: data.volumeInfo.description,
   price: price,
   stock: 20,
